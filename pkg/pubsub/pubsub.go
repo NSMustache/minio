@@ -66,6 +66,7 @@ func (ps *PubSub) Subscribe(subCh chan interface{}, doneCh <-chan struct{}, filt
 		for i, s := range ps.subs {
 			if s == sub {
 				ps.subs = append(ps.subs[:i], ps.subs[i+1:]...)
+				return
 			}
 		}
 	}()
